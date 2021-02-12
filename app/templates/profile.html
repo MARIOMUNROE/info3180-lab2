@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+<link rel="gif" href="{{url_for('static', filename='1huey.gif')}}">
+{% endblock %}
+
+{% block main %} 
+<div class=“container">
+ <header>
+<div>
+ <img src= "{{url_for('static', filename='1huey.gif ')}}">
+ <h1>Mario A. Munroe</h1>
+ <p>@cblk</p>
+ <p>Morant Bay, Honduras</p>
+ <p>{{ date_joined }}</p>
+ </div>
+ </header>
+<article>
+<h4>Young and upcoming webdeveloper who enjoys creating logos in his spare time along with many other talents.
+<br>
+Contact me in case of any queries or need me to work on any projects.</h4>
+<h5>7          100           250</h5>
+<p>Posts    Following     Followers</p>
+<button type="button">Follow</button>
+</article>
+{% endblock %}
+

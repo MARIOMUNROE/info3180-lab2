@@ -18,11 +18,15 @@ def home():
     """Render website's home page."""
     return render_template('home.html')
 
+@app.route('/profile')
+def profile():
+    """Render website's profile page."""
+    return render_template('profile.html', date_joined=format_date_joined())
 
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Mario A. Munroe")
 
 
 ###
@@ -53,6 +57,19 @@ def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
 
+@app.errorhandler(404)
+def page_not_found(error):
+    """Custom 404 page."""
+    return render_template('404.html'), 404
+
+
+def format_date_joined():
+    import datetime
+    now = datetime.datetime.now() # today's date
+    date_joined = datetime.date(2011, 1, 5) # a specific date
+    ## Format the date to return only month and year date
+    date_new = "Joined " + date_joined.strftime("%B, %Y")
+    return date_new
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port="8080")
