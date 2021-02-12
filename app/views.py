@@ -68,7 +68,7 @@ def format_date_joined():
     now = datetime.datetime.now() # today's date
     date_joined = datetime.date(2011, 1, 5) # a specific date
     ## Format the date to return only month and year date
-    date_new = "Joined " + date_joined.strftime("%B, %Y")
+    date_new = "Joined " + date_joined.strftime("%b, %Y")
     return date_new
 
 if __name__ == '__main__':
